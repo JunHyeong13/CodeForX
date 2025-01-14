@@ -33,12 +33,12 @@ import numpy as np
 fig, ax = plt.subplots(figsize=(8, 4))
 
 # Data for the bars
-x_labels = ['1', '2', '3', '4']
+x_labels = ['1', '2', '3', '4', '5', '6']
 y_segments = {
-    '1': [(0, 1.25),(1.50, 2.8)],
-    '2': [(0,2.8)],
-    '3': [(0, 1.25),(1.50, 2.8)],
-    '4': [(0, 2.8)]
+    '1': [(0, 1.28),(1.3, 3.4)],
+    '2': [(0, 1.48),(1.5, 2.1),(2.15, 2.65),(2.7, 3.4)],
+    '3': [(0, 3.4)],
+    '4': [(0, 3.4)]
 }
 # Plot the bars
 for i, (label, segments) in enumerate(y_segments.items()):
@@ -46,18 +46,18 @@ for i, (label, segments) in enumerate(y_segments.items()):
         ax.barh(label, end - start, left=start, color='blue')
 
 # Set x and y axis limits
-ax.set_xlim(0, 3.1)
+ax.set_xlim(0, 3.5)
 ax.set_ylim(-0.5, len(x_labels) - 0.5)
 
 # Add grid and labels
 #ax.set_xticks([0, 1, 2, 3, 4]) 
-plt.xticks(np.arange(0, 3.1, 0.5))
+plt.xticks(np.arange(0, 4.0, 0.5))
 ax.set_yticks(range(len(x_labels)))
 ax.set_yticklabels(x_labels)
 ax.set_xlabel("Time (seconds)")
-ax.set_ylabel("Items (1-4)")
+ax.set_ylabel("Items (1-6)")
 
 # Display the plot
-plt.title("Amusement(normal)")
+plt.title("Sadness(KSL)")
 plt.tight_layout()
 plt.show()
